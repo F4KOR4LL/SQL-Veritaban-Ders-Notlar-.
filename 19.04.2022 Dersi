@@ -1,0 +1,21 @@
+--Create Database Kitabevi			--Database oluşturduk.
+--Create Table tblMusteriler(		--Tablo oluşturduk.
+--MusteriID int not null,			--Gerekli verileri tanımladık. (Boşluk bırakılmayacak şekilde)
+--MusteriAd nvarchar(20) not null,
+--MusteriSoyad nvarchar(20) not null,
+--MusteriGSM char(11) not null,
+--Primary Key (MusteriID)		-- Birincil anahtarı belirledik.
+--)
+--INSERT INTO tblMusteriler (MusteriID,MusteriAd,MusteriSoyad,MusteriGSM)	--Musteri tablosuna veri ekledik.
+--VALUES 
+--	('1234','Muhammed','Tetikoglu','12345678900'),		-- VERİLERİMİZ.
+--	('5678','Nurullah','Tetikoglu','12345678901'),
+--	('9876','Fatih','Kekec','12345678902'),
+--	('4321','Melih','Songur','12345678903'),
+--	('6987','Yagmur','Turna','12345678904'),
+--	('3578','White','Rose','12345678905');
+
+--Select * from tblMusteriler	--Musteriler tablosunun icerigini gösterdik.
+
+--Delete From tblMusteriler Where MusteriID=1234; -- TblMusteriler tablosundaki MusteriİD'sinden 1234'e eşit olanı sildik.
+--update tblMusteriler Set MusteriGSM=66666666666 Where MusteriAd='Fatih' --Musteri adi fatih olanların numarasını değiştirdik.
