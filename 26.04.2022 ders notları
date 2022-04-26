@@ -1,0 +1,28 @@
+--Create Database Firma   --26.04.2022 ders kayıtı
+--Create Table tblPersonel(		--Tablo oluşturduk.
+--PersonelID int not null,
+--PersonelAd nvarchar(20) not null,
+--PersonelSoyad nvarchar(20) not null,
+--Departman nvarchar(20) not null,
+--Gelir int not null,
+--Primary Key (PersonelID)
+--)
+
+--insert into tblPersonel(PersonelID,PersonelAd,PersonelSoyad,Departman,Gelir) 
+--VALUES
+--('1234','Muhammed','Tetikoglu','Siber','50000'),    -- tabloya veri girişi yaptık.
+--('1235','Nurullah','Tetikoglu','Otomasyon','30000'),
+--('1236','Fatih','Tetikoglu','Makina','35000'),
+--('1237','Leyla','Tetikoglu','Disci','25000'),
+--('1238','Seher','Tetikoglu','muhasebe','20000'),
+--('1239','Hüseyin','Tetikoglu','bosisler','1000');
+
+--Select * from tblPersonel -- tblPersonel tablosunu listeledik
+
+--SELECT * FROM tblPersonel WHERE Gelir=35000 AND PersonelAd='Fatih' --Geliri 35000 olanlar ve ismi fatih olanları listeledik.
+--SELECT * FROM tblPersonel WHERE PersonelAd LIKE 'M%' --M harfi ile başlayan kişileri listeledik.
+--SELECT * FROM tblPersonel WHERE Gelir=1000 OR Gelir=50000 --GELİRİ 1000 VEYA 50000 OLANLARI LİSTELEDİK.
+--SELECT * FROM tblPersonel WHERE Gelir BETWEEN 1000 AND 30000 --BETWEEN(ARASINDA DEMEK) 1000 VE 30000 ARALIĞINDAKİLERİ LİSTELEDİK.
+--SELECT * FROM tblPersonel WHERE Gelir>1000 AND Gelir<30000 --Arasında işleminin '<' ve '>' ile yapılmış hali.
+
+	
