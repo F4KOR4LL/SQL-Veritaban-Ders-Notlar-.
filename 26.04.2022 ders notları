@@ -25,5 +25,5 @@
 --SELECT * FROM tblPersonel WHERE Gelir BETWEEN 1000 AND 30000 --BETWEEN(ARASINDA DEMEK) 1000 VE 30000 ARALIĞINDAKİLERİ LİSTELEDİK.
 --SELECT * FROM tblPersonel WHERE Gelir>1000 AND Gelir<30000 --Arasında işleminin '<' ve '>' ile yapılmış hali.
 --SELECT * FROM tblPersonel WHERE PersonelSoyad LIKE '%etik%' -- aratılan sütunun ortasında yazılana göre listeleme.
-
+--SELECT * FROM tblPersonel WHERE Departman in ('Siber','Otomasyon') --Departman sütunundaki iki adet veriyi listeledik.
 	
