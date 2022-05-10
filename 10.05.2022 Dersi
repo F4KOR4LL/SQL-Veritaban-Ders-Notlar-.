@@ -1,0 +1,31 @@
+--Create Database Firma   --10.05.2022 ders kayıtı
+--Create Table personel(		--Tablo oluşturduk.
+--PersonelID int,
+--Ad nvarchar(20),
+--Soyad nvarchar(20),
+--Departman nvarchar(20),
+--DepartmanID int,
+--Gelir int,
+--)
+
+--insert into Personel(PersonelID,Ad,Soyad,Departman,DepartmanID,Gelir)
+--VALUES
+--('01','Muhammed','Tetikoglu','Siber Güvenlik','1','10000'),
+--('02','Nurullah','Tetikoglu','Siber Güvenlik','1','10000'),
+--('03','Melih','Songur','Yazılım','2','8000'),
+--('04','Eren','Şimşek','Yazılım','2','8000'),
+--('05','Oğuzhan','Karalı','İnsan Kaynakları','3','6000'),
+--('06','Furkan','Erdoğan','İnsan Kaynakları','3','6000'),
+--('07','Fatih','Kekeç','Hukuk','4','4000'),
+--('08','Samuray','Jack','Hukuk','4','4000');
+
+--select * from personel
+
+--select sum(Gelir) from Personel --Personel tablosundaki tüm çalışanların toplam geliri
+--select sum(Gelir) from Personel WHERE DepartmanID=3 --Sum fonk.unu koşula bağladık.
+--select sum(Gelir) from Personel WHERE Departman in ('Siber Güvenlik','Hukuk','Yazılım')
+--select sum(Gelir) from Personel WHERE Departman = 'Siber Güvenlik' OR Departman = 'Hukuk' OR Departman = 'Yazılım'
+--select sum(Gelir) from Personel WHERE Gelir>6999 -- Maaşı 6999'dan büyük olanların ortalamasını alma.
+--select AVG(Gelir) from Personel WHERE DepartmanID=2 --Gelir ortalaması alma
+--Select MAX(Gelir) FROM Personel WHERE Departman='Hukuk' --Hukuk departmanında en yüksek maaşı alanı bulma
+--select MIN(Gelir) FROM Personel WHERE Departman='Yazılım' --Yazılım departmanında en düşük maaşı alanı bulma
