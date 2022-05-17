@@ -1,0 +1,48 @@
+--Create Database Firma1   --17.05.2022 ders kayıtı
+--Create Table personel(		--Tablo oluşturduk.
+--PersonelID int,
+--Ad nvarchar(20),
+--Soyad nvarchar(20),
+--Departman nvarchar(20),
+--DepartmanID int,
+--Gelir int,
+--)
+
+--insert into Personel(PersonelID,Ad,Soyad,Departman,DepartmanID,Gelir)
+--VALUES
+--('01','Muhammed','Tetikoglu','Siber Güvenlik','1','10000'),
+--('02','Nurullah','Tetikoglu','Siber Güvenlik','1','10000'),
+--('03','Melih','Songur','Yazılım','2','8000'),
+--('04','Eren','Şimşek','Yazılım','2','8000'),
+--('05','Oğuzhan','Karalı','İnsan Kaynakları','3','6000'),
+--('06','Furkan','Erdoğan','İnsan Kaynakları','3','6000'),
+--('07','Fatih','Kekeç','Hukuk','4','4000'),
+--('08','Samuray','Jack','Hukuk','4','4000');
+
+--Select * From Personel --Bilişim departmanında çalışan personelin adını soyadını ve departmanını 5kdan fazla olan
+--Select * from yenitablo
+--Select Ad,Soyad,Departman,Gelir into IT_Table from Personel
+--Where Departman='Yazılım' and Gelir>5000
+--Select Ad,Soyad,Departman,Gelir into Bilişim_Table from Personel
+--Where Departman='Yazılım' and Gelir>5000
+
+--Geliri 10000 liranın altında olan ilk 5 personel
+--Select Top 5 Ad,Soyad,Departman,Gelir from Personel Where Gelir>5000
+--Select Distinct DepartmanID from Personel
+--Select Count(*) from Personel
+--where Departman='Yazılım'
+--Select Count(Distinct DepartmanID) from Personel
+--Select Count(Distinct Gelir) from Personel
+--Select Ad+' '+Soyad as Ad_veSoyad from Personel
+--Select Ad+' '+Soyad+' '+Departman as Personel_Departman from Personel
+--PERSONEL İD 3DEN BÜYÜK OLANLARI BİRLEŞTİRİYORUZ.
+
+--Select Ad+' '+Soyad as Ad_veSoyad 
+--from Personel
+--Where not PersonelID<3
+
+--Select PersonelID,Ad,Soyad,Departman,Gelir
+--From Personel order by Gelir Desc --Desc büyükten küçüğe ASC İSE KÜÇÜKTEN BÜYÜĞE
+
+--SElect PersonelID,Ad,Soyad,Departman,GElir,Gelir*0.2 as [Gelir_Vergisi]
+from Personel ORDER BY Gelir_Vergisi desc --Sınavda çıkar
