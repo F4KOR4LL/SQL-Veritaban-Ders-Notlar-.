@@ -1,0 +1,74 @@
+--Create Database Firma   --24.05.2022 ders kayıtı
+--Create Table personel(		--Tablo oluşturduk.
+--PersonelID int,
+--Ad nvarchar(20),
+--Soyad nvarchar(20),
+--Departman nvarchar(20),
+--DepartmanID int,
+--Gelir int,
+--)
+DATABASE VERİ TABLOSU 
+1	Faruk	Sevim	Muhasebe	1	4250
+2	Ali	Birol	Muhasebe	1	4500
+3	Melih	Songur	Muhasebe	1	5250
+4	Fatih	Kekeç	Muhasebe	1	5500
+5	Furkan	Ekiz	Yazılım	2	5750
+6	Melek	Beytüt	Yazılım	2	6250
+7	Samet	Arsal	Yazılım	2	6750
+8	Batın	Keskin	Yazılım	2	7000
+9	Büşra	Otar	Bilişim	3	7250
+10	Egemen	Yılmaz	Bilişim	3	7500
+11	Emirhan	Karakaş	Bilişim	3	7750
+12	İrem	Nur	Bilişim	3	8000
+13	Mehmet	Demirbaş	Güvenlik	4	8250
+14	Nilsu	Sağol	Güvenlik	4	8500
+15	Nurullah	Tetikoğlu	Güvenlik	4	8750
+16	Muhammed	Tetikoğlu	Güvenlik	4	9000
+17	Vildan	Arıkan	Araştırma	5	9250
+18	Yunus	Sobacı	Araştırma	5	9500
+19	Zeynep	Ünver	Araştırma	5	9750
+20	Eşref	Tonbil	Araştırma	5	9800
+
+
+Select *From Personel
+
+Select departmanID,gelir from personel
+
+Select sum(gelir) from Personel where DepartmanID=4;
+
+Select AVG(gelir) from Personel
+
+Select DepartmanID,avg(gelir)
+	from Personel
+		group by DepartmanID			--Departmanda çalışanların ve 6binden fazla maaş alanların ort.
+			having avg(gelir)>6000
+
+
+SELECT Soyad FROM Personel GROUP BY Soyad
+
+SELECT Departman FROM Personel GROUP BY Departman
+
+SELECT Departman, count(Departman) 
+	from personel
+		group by Departman 
+			having count(gelir)<5;
+
+Select Departman,sum(gelir)
+	from Personel
+		group by Departman      --Departmanların gelir toplamı
+			having sum(gelir)>0
+
+Select Departman,avg(gelir)
+	from Personel
+		group by Departman		--Departmanların gelir ortalaması
+			having avg(gelir)>0
+
+
+Select Departman,min(gelir)
+	from Personel     --En düşük maaşı alan departmanı bulma.
+		group by Departman having min(gelir)<5000
+
+Select Departman,sum(gelir)
+	from Personel
+		group by Departman      --Gelir toplamı 20000 üstü olan departmanları listeler.
+			having sum(gelir)>20000
