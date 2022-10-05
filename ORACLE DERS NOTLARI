@@ -1,0 +1,28 @@
+ --soru 1 maaşı 4000 ile 5000 arasında olan kişileri listeleyiniz.
+select * from employees e  --boşluk bırakıp "e" yazarsak tabloyu kısaltma olarak yazabiliyoruz.
+where e.salary > 4000 and e.salary < 5000
+
+--Soru 2 Manager ID'si 114 olan personelin adını ve soy adınız yazan sql kodunu yazınız.
+
+select a.manager_ıd, a.first_name, a.last_name --bu sefer kısaltımı a olarak aldık.
+from employees a --aldığımız tabloyu belirttik.
+where a.manager_id=114 --Koşulu tanımladık.
+
+--Soru 3 Hire date (işe giriş tarihi) 1984'ten sonra olanların adını, soyadını, işe giriş tarihini ve maaşını listeleyen sql kodunu yazınız.
+
+select e.first_name,e.last_name,e.salary,e.hire_date --veri alınacak tablolar yazıldı.
+from employees e
+where to_char(e.hire_date,'yyyy')>1984 -- 4basamaklı kısmı char a dönüştürdük.
+
+--Soru 4 En az 20 yıldır personel olan çalışanların işe giriş tarihi , adı, soyadı, maaşını listeleyen sql kodunu yazınız.
+
+select e.first_name,e.last_name,e.salary,e.hire_date
+from employees e
+where to_char(sysdate,'yyyy')-to_char(e.hire_date,'yyyy')>20
+
+--Soru 5 jod_ıd'si içindeki IT_Prog personelin adını,soyadını,job_ıd'sini listeleyen sql kodunu yazınız.
+
+select e.first_name,e.last_name,e.job_id
+from employees e
+where e.job_id='IT_PROG'
+
