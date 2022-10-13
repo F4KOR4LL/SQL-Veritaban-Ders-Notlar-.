@@ -26,3 +26,48 @@ select e.first_name,e.last_name,e.job_id
 from employees e
 where e.job_id='IT_PROG'
 
+//13.10.2022 Ders notları
+
+--Soru 1 Departman id'si 80 ve 100 olan personellerin adını, soyadını, departman idlerini maaşlarını listeleyen SQL kodunu yazalım.
+
+select e.first_name,e.last_name,e.DEPARTMENT_ID,e.salary
+from EMPLOYEES e
+where  e.DEPARTMENT_ID=80 OR e.DEPARTMENT_ID=100
+
+--Soru 2 Herhangi bir müdüre bağlı olmadan çalışan personelin adını,Soyadını,Maaşını,manager,idsini listeleyen SQL kodunu yazınız.
+
+select e.first_name,e.last_name,e.MANAGER_ID,e.salary
+from EMPLOYEES e
+where e.MANAGER_ID is null
+
+--Soru 3 Adının ikinci harfi d olan ve adı 4 karakterli personelin adını, soy adını, maaşını ve email adresini listeleyen SQL kodunu yazalım.
+
+select e.first_name,e.last_name,e.salary,e.EMAIL
+from EMPLOYEES e
+where e.first_name like '_d__%'
+
+--Soru 4 Departman ID^si 15 ten büyük olan Personelin soyadını ve adını bir sütunda birlşetirerek departman_id, ad soyad maaşını listeleyen sql kodunu yazalım
+
+select e.last_name||''||e.first_name as "SOYAD_AD",
+       e.DEPARTMENT_ID,e.FIRST_NAME,e.LAST_NAME,e.salary
+from EMPLOYEES e
+where e.DEPARTMENT_ID > 15
+
+--Soru 5 Beş yıldan fazla çalışan personelin maaşına 1000 dolar artış yapan Sql kodunu yazalım. Personlein adını soy adını departman_id'sini ve ilk maaşı da listelesin.
+
+select e.first_name,e.last_name,e.DEPARTMENT_ID,e.salary,e.salary + '1000' as yenimaas,e.HIRE_DATE
+from EMPLOYEES e
+where to_char(e.hire_date,'yyyy')>5
+
+--Soru 6 Personelin maaşına göre büyükten küçüğe doğru sıralama yaparak Personel adı, soyadı, işe giriş tarhini listeleyen SQL kodunu yazalım.
+
+SELECT e.first_name,e.last_name,e.hire_date,e.salary
+FROM EMPLOYEES e 
+ORDER BY e.salary DESC
+
+--Soru 7 Personelin adını, soyadını,departman_id sini ve maaşını kıdem süresine göre küçükten büyüğe doğru sıralayıp maaşı 7000 den az olanlara 1000 dolar zam yapan SQL kodunu yazalım.
+
+select e.first_name,e.last_name,e.DEPARTMENT_ID,e.salary,e.salary + '1000' as yenimaas,e.hire_date
+from employees e
+where e.salary < 7000
+order by e.hire_date DESC
