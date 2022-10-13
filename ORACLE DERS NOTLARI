@@ -71,3 +71,9 @@ select e.first_name,e.last_name,e.DEPARTMENT_ID,e.salary,e.salary + '1000' as ye
 from employees e
 where e.salary < 7000
 order by e.hire_date DESC
+
+--Soru 8 Her departmanın ve o departmanın müdürünün adını listeleyen 
+
+select e.DEPARTMENT_NAME,e.MANAGER_ID
+from departments e
+where e.DEPARTMENT_ID is null
